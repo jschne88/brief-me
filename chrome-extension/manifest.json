@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Brief Me",
+  "version": "1.0.0",
+  "description": "AI-powered meeting summaries for Google Calendar events",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://calendar.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://calendar.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Brief Me"
+  }
+}
